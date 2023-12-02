@@ -466,6 +466,11 @@ ul {
   height: 40px;
   background-color: transparent;
   color: #ffffff;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   padding: 8px 16px;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -481,15 +486,17 @@ ul {
   border-color: #31d0aa;
 }
 .subscribe-button {
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   display: flex;
   align-items: center;
-  gap: 16px;
+  /*gap: 16px;*/
   text-align: center;
   letter-spacing: 0.04em;
+  min-width: 165px;
+  justify-content: center;
 
   padding: 8px 24px;
   color: #ffffff;
@@ -500,6 +507,10 @@ ul {
 .subscribe-button:hover,
 .subscribe-button:focus {
   background-color: #31d0aa;
+}
+
+.subscribe-icon {
+  margin-left: 16px;
 }
 
 .backdrop {
@@ -534,9 +545,15 @@ ul {
   border-radius: 4px;
   padding: 24px;
   padding-top: 72px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   top: 24px;
   right: 24px;
@@ -548,7 +565,7 @@ ul {
   border: 1px solid rgba(0, 0, 0, 0.1);
   line-height: 0;
 
-  transition-property: fill, background-color, border-color;
+  transition-property: background-color, border-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -556,8 +573,16 @@ ul {
 .modal-close-btn:hover,
 .modal-close-btn:focus {
   fill: #fff;
-  background-color: #4d5ae5;
-  border-color: transparent;
+  background-color: #404bbf;
+  border: none;
+}
+.modal-close-btn-icon {
+  fill: #2e2f42;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-close-btn-icon:hover,
+.modal-close-btn-icon:focus {
+  fill: #ffffff;
 }
 
 .modal-description {
@@ -602,7 +627,7 @@ ul {
   background-color: transparent;
   padding-left: 38px;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  outline: none;
+  outline: transparent;
 
   font-weight: 400;
   font-size: 12px;
@@ -638,12 +663,13 @@ ul {
   padding: 8px 16px;
   resize: none;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  outline: none;
+  outline: transparent;
 
   font-weight: 400;
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
+  color: rgba(46, 47, 66, 0.4);
 }
 
 .form-textarea::placeholder {
@@ -685,13 +711,16 @@ ul {
   border-radius: 2px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   fill: transparent;
-  transition-property: fill, border-color, background-color;
+  /*transition-property: fill, border-color, background-color;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);*/
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-checkbox:checked + .form-checkbox-label > .form-own-checkbox {
-  background-color: #4d5ae5;
+  background-color: #404bbf;
   border: none;
   fill: #f4f4fd;
 }
